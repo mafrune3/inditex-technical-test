@@ -12,7 +12,7 @@ spring:
     password: ${DATABASE_PASSWORD}
   jpa:
     database-platform: ${DATABASE_DIALECT}
-    database: {$DATABASE_TYPE}
+    database: ${DATABASE_TYPE}
     openInView: false
     show_sql: false
     generate-ddl: false
@@ -26,3 +26,10 @@ spring:
     console:
       enabled: true
       path: /h2-console
+
+springdoc:
+  api-docs:
+    enabled: true
+  swagger-ui:
+    enabled: true
+    path: /doc/swagger-ui.html

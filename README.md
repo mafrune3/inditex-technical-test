@@ -9,3 +9,8 @@ To config correctly the application you must define next environment variables, 
 - DATABASE_PASSWORD
 - DATABASE_DIALECT
 - DATABASE_TYPE
+
+## Swagger
+```
+http://localhost:9000/doc/swagger-ui.html
+```

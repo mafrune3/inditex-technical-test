@@ -13,5 +13,3 @@ spring:
     open-in-view: false
   liquibase:
     change-log: classpath:db/changelog-root.xml
-
-# NOTA: No es necesario reconfigurar 'server.port' en los tests
