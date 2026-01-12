@@ -11,10 +11,8 @@ import org.springframework.web.method.annotation.MethodArgumentTypeMismatchExcep
 @ControllerAdvice
 public class ControllerExceptionHandler {
     @ExceptionHandler(PriceNotFoundException.class)
-    public ResponseEntity<ErrorResponse> handleException(PriceNotFoundException e) {
-        return ResponseEntity.badRequest().body(
-                createResponse(HttpStatus.BAD_REQUEST.value(), "PRICE_NOT_FOUND")
-        );
+    public ResponseEntity<Void> handleException(PriceNotFoundException e) {
+        return ResponseEntity.notFound().build();
     }
 
     @ExceptionHandler(MethodArgumentTypeMismatchException.class)

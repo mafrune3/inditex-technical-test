@@ -127,9 +127,7 @@ public class GetByDateProductIdAndBrandIdControllerTest {
 
         mockMvc.perform(get(url)
                         .contentType(MediaType.APPLICATION_JSON))
-                .andExpect(status().isBadRequest())
-                .andExpect(jsonPath("$.errorCode").value(400))
-                .andExpect(jsonPath("$.message").value("PRICE_NOT_FOUND"))
+                .andExpect(status().isNotFound())
                 .andReturn();
     }
 
