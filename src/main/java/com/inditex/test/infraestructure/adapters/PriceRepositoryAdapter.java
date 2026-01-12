@@ -9,6 +9,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
+import java.util.Optional;
 
 @Repository
 public class PriceRepositoryAdapter implements PriceRepository {
@@ -20,9 +21,8 @@ public class PriceRepositoryAdapter implements PriceRepository {
 
     @Override
     @Transactional(readOnly = true)
-    public Price findByDateProductIdAndBrandId(LocalDateTime date, int productId, int brandId) {
+    public Optional<Price> findByDateProductIdAndBrandId(LocalDateTime date, int productId, int brandId) {
         return jpaRepository.findFirstByStartDateLessThanEqualAndEndDateGreaterThanEqualAndProductIdAndBrandIdOrderByPriorityDesc(date, date, productId, brandId)
-                .map(PriceMapper::toDomain)
-                .orElseThrow(PriceNotFoundException::new);
+                .map(PriceMapper::toDomain);
     }
 }
