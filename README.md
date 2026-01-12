@@ -10,6 +10,11 @@ To config correctly the application you must define next environment variables, 
 - DATABASE_DIALECT
 - DATABASE_TYPE
 
+## H2 Console
+```
+http://localhost:9000/h2-console
+```
+
 ## Swagger
 ```
 http://localhost:9000/doc/swagger-ui.html
