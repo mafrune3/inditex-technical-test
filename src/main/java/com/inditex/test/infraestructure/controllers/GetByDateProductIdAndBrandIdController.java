@@ -1,6 +1,6 @@
 package com.inditex.test.infraestructure.controllers;
 
-import com.inditex.test.application.GetByDateProductIdAndBrandIdUC;
+import com.inditex.test.application.usecases.GetByDateProductIdAndBrandIdUC;
 import com.inditex.test.domain.models.Price;
 import com.inditex.test.infraestructure.mappers.PriceMapper;
 import com.inditex.test.infraestructure.responses.PriceResponse;

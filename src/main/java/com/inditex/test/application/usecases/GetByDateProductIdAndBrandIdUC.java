@@ -1,4 +1,4 @@
-package com.inditex.test.application;
+package com.inditex.test.application.usecases;
 
 import com.inditex.test.domain.models.Price;
 import com.inditex.test.domain.services.PriceService;
