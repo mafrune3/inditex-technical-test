@@ -4,6 +4,8 @@ server:
 spring:
   application:
     name: inditex-technical-test
+  main:
+    banner-mode: off
   datasource:
     url: ${DATABASE_CONNECTION}
     username: ${DATABASE_USERNAME}
@@ -12,12 +14,13 @@ spring:
     database-platform: ${DATABASE_DIALECT}
     database: {$DATABASE_TYPE}
     openInView: false
-    show_sql: true
+    show_sql: false
     generate-ddl: false
     hibernate:
       ddl-auto: none
     defer-datasource-initialization: false
   liquibase:
+    enabled: true
     change-log: classpath:db/changelog-root.xml
   h2:
     console:
