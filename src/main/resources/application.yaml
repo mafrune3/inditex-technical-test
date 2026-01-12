@@ -8,8 +8,6 @@ spring:
     url: ${DATABASE_CONNECTION}
     username: ${DATABASE_USERNAME}
     password: ${DATABASE_PASSWORD}
-    initialization-mode: always
-    initialize: false
   jpa:
     database-platform: ${DATABASE_DIALECT}
     database: {$DATABASE_TYPE}
@@ -18,4 +16,10 @@ spring:
     generate-ddl: false
     hibernate:
       ddl-auto: none
-    defer-datasource-initialization: true
+    defer-datasource-initialization: false
+  liquibase:
+    change-log: classpath:db/changelog-root.xml
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
